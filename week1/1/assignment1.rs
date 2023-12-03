@@ -5,7 +5,7 @@ use std::path::Path;
 
 fn main() {
     // Create a path to the desired file
-    let path = Path::new("input.txt");
+    let path = Path::new("../input.txt");
     let display = path.display();
 
     // Open the path in read-only mode, returns `io::Result<File>`
@@ -30,6 +30,7 @@ fn main() {
 }
 
 fn get_digit(string: String) -> i32{
+    // let mut results = vec![];
     let digits_only: String = string.chars().filter(|c| c.is_digit(10)).collect();
     let first_digit = digits_only.chars().nth(0).unwrap();
     let last_digit =  digits_only.chars().last().unwrap();
